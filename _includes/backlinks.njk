@@ -1,0 +1,21 @@
+<footer class="c-lt-grey d-flex f-jc-sb p-2">
+	<div class="width-50 flow">
+		<h3>meta</h3>
+		<p>updated on {{ page.date | prettyDate}}</p>
+	</div>
+	<div class="flow width-50">
+		<h3>backlinks</h3>
+		{% if backlinks.length > 0%}
+			<ul class="no-list">
+				{% for link in backlinks %}
+					<li>
+						<a href="{{link.url}}">{{link.title}}</a>
+						<p>{{link.excerpt | safe }}</p>
+					</li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<p>No backlinks found.</p>
+		{% endif %}
+	</div>
+</footer>

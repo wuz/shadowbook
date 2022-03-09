@@ -1,0 +1,14 @@
+{% extends './base.njk' %}
+{% block main %}
+  <div class="grid-container" data-simplebar>
+    <div class="grid">
+      <main class="page" data-level="1" data-simplebar>
+        <article class="content bor-bot-1-s-d">
+          <h1 class="note-title">{{ title }}</h1>
+          {{ content | safe}}
+        </article>
+        {% include 'backlinks.njk' %}
+      </main>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include 'head.njk' %}
+  </head>
+  <body>
+    <header class="d-flex f-ai-c f-jc-sb p-1 bor-bot-1-s-d">
+      <div style="height:100%;">
+        <a href="/" title="Go home">
+          <img
+          src="/assets/avatar.png"
+          alt="logo" class="img-r-v"/>
+        </a>
+      </div>
+      <nav class="d-flex f-ai-c f-jc-c fs-18">
+        <a href="https://wuz.sh" title="Wuz.sh" class="m-h-1">{{ "home" | iconify | safe }}</a>
+        <a href="https://twitter.com/CallMeWuz" title="Twitter" class="m-h-1" rel="me">{{ "twitter" | iconify | safe }}</a>
+      </nav>
+    </header>
+    {% block main %}{% endblock %}
+    <script async src="/assets/js/simplebar.min.js"></script>
+    <script async src="/assets/js/URI.js"></script>
+    <script async src="/assets/js/grimoire.js"></script>
+  </body>
+</html>

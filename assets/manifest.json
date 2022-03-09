@@ -1,0 +1,22 @@
+{
+  "short_name": "Grimoire Garden",
+  "name": "Wuz's Grimoire: Collected notes and ramblings",
+  "icons": [
+    {
+      "src": "/assets/icons/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/icons/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#fc3286",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#fc3286",
+  "description": "A collection of notes"
+}
