@@ -1,9 +1,3 @@
-# github submodule repo address without https:// prefix
-SUBMODULE_GITHUB=github.com/beeinger/vercel-private-submodule
-
-# .gitmodules submodule path
-SUBMODULE_PATH=library
-
 # github access token is necessary
 # add it to Environment Variables on Vercel
 if [ "$GITHUB_ACCESS_TOKEN" == "" ]; then
