@@ -8,11 +8,6 @@ fi
 # stop execution on error - don't let it build if something goes wrong
 set -e
 
-# get submodule commit
-output=$(git submodule status --recursive) # get submodule info
-no_prefix=${output#*-}                     # get rid of the prefix
-COMMIT=${no_prefix% *}                     # get rid of the suffix
-
 # set up an empty temporary work directory
 rm -rf tmp || true # remove the tmp folder if exists
 mkdir tmp          # create the tmp folder
@@ -22,7 +17,7 @@ cd tmp             # go into the tmp folder
 git init                                                               # initialise empty repo
 git remote add origin https://"$GITHUB_ACCESS_TOKEN@$SUBMODULE_GITHUB" # add origin of the submodule
 git fetch --depth=1 origin main                                        # fetch only the required version
-git checkout "$COMMIT"                                                 # checkout on the right commit
+git checkout main                                                      # checkout on the right commit
 
 # move the submodule from tmp to the submodule path
 cd ..                       # go folder up
