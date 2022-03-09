@@ -4,7 +4,8 @@
   "description": "A starter site for building a mind garden in eleventy.",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy",
+    "vercel-install": "./scripts/vercel-submodule-workaround.sh && yarn --ignore-scripts --production=false"
   },
   "repository": {
     "type": "git",
