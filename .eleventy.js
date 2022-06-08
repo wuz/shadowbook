@@ -19,9 +19,8 @@ if (!String.prototype.endsWith) {
 }
 
 const closestFile = (fileName, arrayOfPaths) => {
-  const resolved = path.resolve(".", file);
   arrayOfPaths.forEach((path) => {
-    console.log(path.relative(resolved, path));
+    console.log(fileName, path);
   });
   return arrayOfPaths[0];
 };
@@ -154,8 +153,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary("md", md);
 
   eleventyConfig.addCollection("notes", function (collection) {
-    return collection
-      .getFilteredByGlob(["./vault/notes/**/*.md"]);
+    return collection.getFilteredByGlob(["./vault/notes/**/*.md"]);
   });
 
   eleventyConfig.addPassthroughCopy("./vault/attachments");
