@@ -1,0 +1,87 @@
+---
+import 'simplebar'; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
+import 'simplebar/dist/simplebar.css';
+import BaseStyles from './BaseStyles.astro';
+
+type Props = {
+  title: string;
+  description: string;
+};
+
+const { title, description } = Astro.props;
+---
+
+<!-- {% set metatitle %}
+{{site.title}}
+{% endset %}
+{% if type == "note" %}
+  {% set metatitle %}
+    {{site.title}}
+  {% endset %}
+{% endif %}
+{% if title %}
+  {% set metatitle %}
+    {{ title + " • " + metatitle}}
+  {% endset %}
+{% endif %}
+{% set metadesc %}
+{{site.desc}}
+{% endset %}
+{% if desc %}
+  {% set metadesc %}
+  {{desc}}
+  {% endset %}
+{% endif %}
+{% set metatype %}
+website
+{% endset %}
+{% if type == "note" %}
+  {% set metatype %}
+article
+{% endset %}
+{% endif %} -->
+
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"
+/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<link rel="manifest" href="/manifest.json">
+
+<link rel="shortcut icon" href="/favicon.svg" type="image/svg"/>
+
+<title>{title}</title>
+
+<meta name="description" content={description} />
+
+<!-- <meta property="og:title" content="{{-metatitle-}}"/>
+<meta property="og:type" content="{{-metatype-}}"/> -->
+<meta property="og:url" content="{{ site.baseurl + page.url }}"/>
+<meta property="og:image" content="/assets/avatar.png"/>
+<!-- <meta property="og:description" content="{{- metadesc -}}"/> -->
+
+<!-- <link rel="canonical" href="{{ site.baseurl + page.url }}"/> -->
+<!-- {% set css %}
+{% include "../assets/css/simplebar.css" %}
+{% include "../assets/css/style.css" %}
+{% endset %} -->
+<style>
+  /* {{css | cssmin | safe}} */
+</style>
+<noscript>
+  <style>
+    /**
+    * Reinstate scrolling for non-JS clients
+    */
+    .simplebar-content-wrapper {
+      overflow: auto;
+    }
+  </style>
+</noscript>
+</head>
+
+<BaseStyles />
